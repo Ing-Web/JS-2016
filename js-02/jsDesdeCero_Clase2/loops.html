@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>JavaScript Desde Cero - Clase 1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="prism.css">
+</head>
+<body>
+<h1>Loops</h1>
+<main>
+<p>Los loops permiten ejecutar un código multiples veces para evitar tener que repetirlo a mano. Veremos cuatro:</p>
+  <ul>
+    <li>for</li>
+    <li>while</li>
+    <li>do</li>
+    <li>for in</li>
+  </ul>
+  <h2>for</h2>
+  <p>Este loop requiere tres elementos para definir las iteraciones:</p>
+  <ul>
+    <li>Una variable que sea el indice (contará la cantidad de iteraciones)</li>
+    <li>Una condición que detenga las iteraciones</li>
+    <li>Una modificacion a la variable para que el loop pueda detenerse.</li>
+  </ul>
+  <p>El bloque a continuación se ejecutará la cantidad de veces indicadas.</p>
+<pre class="language-javascript line-numbers">
+<code>
+for(var i = 0; i<10; i++){
+  console.log(i)
+}
+// el loop anterior devolvera por consola 0 1 2 3 4 5 6 7 8 9</code>
+</pre>
+<p>Ejemplo: recorriendo un array:</p>
+<pre class="language-javascript line-numbers">
+<code>
+var alumnos = ["Maria", "Jose", "Carlos", "Andres", "Juan"];
+for(var i = 0; i < alumnos.length; i++){
+  console.log("Buenos días " + alumnos[i]");
+}
+//"Buenos días Maria"
+//"Buenos días Jose"
+//"Buenos días Carlos"
+//"Buenos días Andres"
+//"Buenos días Juan"</code>
+</pre>
+
+<h2>While</h2>
+<p>El loop "while" ejecuta un codigo mientras se cumpla una condicion. Esta condicion debe ponerse entre parentesis. Es similar a for pero con otra sintaxis.</p>
+<p>Ejemplo: recorriendo un array</p>
+<pre class="language-javascript line-numbers">
+<code>
+var alumnos = ["Maria", "Jose", "Carlos", "Andres", "Juan"];
+var i = 0;
+while(i < alumnos.length) {
+  console.log("Buenos días " + alumnos[i]");
+  i++;
+}
+//"Buenos días Maria"
+//"Buenos días Jose"
+//"Buenos días Carlos"
+//"Buenos días Andres"
+//"Buenos días Juan"</code>
+</pre>
+<h2>Do</h2>
+<p>Este loop es similar a while con la diferencia de que la condicion se evalua al final. Con lo cual, el código se ejecuta al menos una vez (incluso si la condicion no se cumple).</p>
+<p>Ejemplo: recorriendo un array</p>
+<pre class="language-javascript line-numbers">
+<code>
+var alumnos = ["Maria", "Jose", "Carlos", "Andres", "Juan"];
+var i = 0;
+do {
+console.log("Buenos días " + alumnos[i]");
+  i++;
+} while(i < alumnos.length)
+//"Buenos días Maria"
+//"Buenos días Jose"
+//"Buenos días Carlos"
+//"Buenos días Andres"
+//"Buenos días Juan"</code>
+</pre>
+  <h2>For in</h2>
+  <p>Este loop permite iterar sobre arrays u objetos usando una variable para referenciar a los indices.</p>
+<p>Ejemplo: recorriendo un array</p>
+<pre class="language-javascript line-numbers">
+<code>
+var alumnos = ["Maria", "Jose", "Carlos", "Andres", "Juan"];
+for(var i in alumnos){
+  console.log("Buenos días " + alumnos[i]");
+}
+//"Buenos días Maria"
+//"Buenos días Jose"
+//"Buenos días Carlos"
+//"Buenos días Andres"
+//"Buenos días Juan"</code>
+</pre>
+</main>
+<script src="prism.js"></script>
+</body>
+</html>

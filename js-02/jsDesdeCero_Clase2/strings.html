@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>JavaScript Desde Cero - Clase 1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="prism.css">
+</head>
+<body>
+<h1>Strings</h1>
+<main>
+<p>Un string es un cojunto de cero o más caracteres rodeados por comillas simples o dobles</p>
+
+<pre class="language-javascript line-numbers">
+<code>
+var string = "Soy un string";</code>
+</pre>
+
+<h2>.length</h2>
+<p>Se puede saber la cantidad de caracteres de un string con la propiedad <code>.length</code></p>
+
+<pre class="language-javascript line-numbers">
+<code>
+string.length; //13</code>
+</pre>
+
+<h2>.indexOf("caracter")</h2>
+<p>Se puede conocer la posicion de un caracter con el método <code>.indexOf()</code>. Las posiciones se empiezan a contar de cero. Si el caracter no se encuentra, se devuelve -1.</p>
+<pre class="language-javascript line-numbers">
+<code>
+string.indexOf("S"); // 0
+string.indexOf("n"); // 5
+string.indexOf("a"); // -1</code>
+</pre>
+
+<h2>Recuperar caracteres</h2>
+<p>Se pueden recuperar caracteres de un string indicandole su indice entre parentesis</p>
+<pre class="language-javascript line-numbers">
+<code>
+string[5]; // "n"
+string[8]; // "t"</code>
+</pre>
+
+<h2>.toLowerCase() y .toUpperCase()</h2>
+<p>Los métodos <code>.toLowerCase()</code> y <code>.toUpperCase()</code> convierten el string a minusculas o mayusculas respectivamente.</p>
+<pre class="language-javascript line-numbers">
+<code>
+  string.toLowerCase(); // "soy un string"
+  string.toUpperCase(); // "SOY UN STRING"</code>
+</pre>
+
+<h2>.replace("original","remplazo")</h2>
+<p>El método <code>.replace()</code> se usa para remplazar partes de un string por otro string. No remplaza al string original. El primer parámetro es el string a remplazar y el segundo es el nuevo string.</p>
+
+<pre class="language-javascript line-numbers">
+<code>
+var string2 = string.replace("string", "nuevo string");
+  // "Soy un nuevo string"
+string; // "Soy un string"</code>
+</pre>
+<h2>.substring(inicio,fin)</h2>
+<p>EL método <code>.substring()</code> permite extraer caracteres de un string y crear otro. No modifica el string original.</p>
+<p>El método <code>.substring()</code> requiere dos parámetros que son indices del string. El primer parámetro es el indice desde el cual se empieza a extraer. El segundo es el indice en el que se detiene la busqueda (aunque este caracter no es incluido en el nuevo string)</p>
+<pre class="language-javascript line-numbers">
+<code>
+string3 = string.substring(1,3); // oy</code>
+</pre>
+<h2>.slice(inicio,fin)</h2>
+<p>Con parámetros positivos <code>.slice()</code> funciona igual que <code>.substring()</code>. La diferencia es que admite parámetros negativos.</p>
+<p>El parámetro negativo indica que contará esa cantidad de caracteres comenzando desde el final</p>
+<pre class="language-javascript line-numbers">
+<code>
+string.slice(-4); // "ring"
+string.slice(-5,-1); // "trin"
+string.slice(2,-3); // "y un str"</code>
+</pre>
+<p>El método <code>.slice()</code> no modifica el string original</p>
+
+<h2>.trim()</h2>
+<p>El método <code>.trim()</code> (sin parámetros) elimina los espacios sobrantes al inicio y final de un string.</p>
+<pre class="language-javascript line-numbers">
+<code>
+var nuevoString = "  tengo muchos espacios de más     ";
+nuevoString.trim(); // "tengo muchos espacios de más"</code>
+</pre>
+</main>
+<footer>
+  <a href="http://escueladigital.pe">Escuela Digital</a>
+</footer>
+<script src="prism.js"></script>
+</body>
+</html>

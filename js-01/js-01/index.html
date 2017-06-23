@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>JavaScript Desde Cero - Clase 01</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximun-scale=1">
+    </head>
+    <body>
+        <h1>JavaScript Desde Cero - Clase 1</h1>
+        <section>
+          <h2>Insertar JavaScript en HTML</h2>
+          <p>Se usa la etiqueta &lt;script&gt;&lt;/script&gt; y dentro se puede escribir código javascript o se puede llamar a un archivo externo con el atributo src (recomendable).</p>
+          <p>La etiqueta &lt;script&gt;&lt;/script&gt; puede colocarse en el head o en el body del html. La unica diferencia será su carga respecto al DOM.</p>
+        </section>
+        <section>
+          <h2>Sintaxis</h2>
+          <ul>
+            <li>Es Case Sensitive (distingue mayusculas y minusculas)</li>
+            <li>JavaScript es de tipado dinámico (no se necesita especificar el tipo de dato y se puede cambiar de uno a otro sin problemas)</li>
+            <li>Los comentarios en JavaScript pueden escribirse de dos maneras
+              <ul>
+                <li>/* */ (multilinea)</li>
+                <li>// (una sola linea, version recomendada)</li>
+              </ul>
+            </li>
+            <li>El uso del punto y coma
+              <ul>
+                <li>Todo enunciado debe terminar en punto y coma</li>
+                <li>Aunque estrictamente hablando el punto y coma es opcional, es buena práctica escribirlo porque en caso contrario el navegador podria interpretarlo de forma incorrecta.</li>
+                <li>Como regla general, no deben ponerse punto y coma luego de el cierre de llaves (porque las llaves encierran un bloque). Pero hay dos excepciones (en las cuales sí se debe poner punto y coma después de un cierre de llaves):
+                <ul>
+                  <li>Cuando se define un objeto literal</li>
+                  <li>Cuando se crea una función con una expresión</li>
+                </ul>
+                </li>
+              </ul></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Instalar JSHint en Sublime Text 3</h2>
+          <ol>
+            <li>Instalamos SublimeLinter desde el package control</li>
+            <li>Instalamos SublimeLinter-jshint desde el package control</li>
+            <li>Instalamos NodeJS en el sistema (saltar este paso si ya lo tienes instalado).</li>
+            <li>Instalar jshint desde la terminal (puede ser el cmd de windows) con el comando <br>
+            <code>npm install -g jshint</code>
+            <br>
+            Si sale que el comando npm no se encuentra se debe añadir npm a las variables de entorno de Windows. Otra forma es usar la consola de Node (node command prompt).</li>
+          </ol>
+        </section>
+        <section>
+          <h2>Variables</h2>
+          <p>Las variables son contenedores de información. Se definen con la palabra reservada "var".</p>
+          <p>Una cosa es definir una variable y otra es asignarle un valor. Se asignan valores con el signo =</p>
+          <p>Una variable sin valor asignado, devuelve undefined</p>
+          <p>Una variable tiene un ambito en el cual existe. Si se declara dentro de una funcion, su scope (ambito) es esa función. Si no se declara dentro de una función es una variable global (existe para toda la aplicacion y no es recomendable).</p>
+          <p>Es recomendable siempre declarar una variable con la palabra reservada "var".</p>
+        </section>
+        <section>
+          <h2>Tipos de datos</h2>
+          <ul>
+            <li>Primitivos (un solo valor)
+              <ul>
+                <li>Primarios
+                  <ul>
+                    <li>String
+                    <br>
+                    Son cero o más caracteres entre comillas (simples o dobles).
+                    </li>
+                    <li>Number
+                    <br>
+                    Son numeros enteros o decimales, positivos o negativos</li>
+                    <li>Boolean
+                    <br>
+                    Son solo dos: true (verdadero) y false (falso). Sin embargo hay valores que se comportan como falsos (falsy values):
+                    <ul>
+                      <li>0</li>
+                      <li>String vacio ("")</li>
+                      <li>Null</li>
+                      <li>Undefined</li>
+                    </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>Especiales
+                  <ul>
+                    <li>Undefined</li>
+                    <li>Null</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Compuestos (más de un valor)
+              <ul>
+                <li>Array</li>
+                <li>Objetos</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Operadores</h2>
+          <p>Son signos que ejecutan operaciones.</p>
+          <ul>
+            <li>Asignación (asignan valores)
+              <ul>
+                <li>=</li>
+                <li>+=</li>
+                <li>-=</li>
+              </ul>
+            </li>
+            <li>Operadores aritméticos
+              <ul>
+                <li>+</li>
+                <li>-</li>
+                <li>*</li>
+                <li>/ (division, parte entera)</li>
+                <li>% (division, el resto "modulo")</li>
+              </ul>
+            </li>
+            <li>Operadores de comparacion
+              <li>== (igualdad de valor)</li>
+              <li>=== (igualdad de valor y tipo)</li>
+              <li>!= (no igualdad de valor)</li>
+              <li>!== (no igualdad de valor y tipo)</li>
+            </li>
+          </ul>
+        </section>
+        <script src="scripts.js"></script>
+        
+    </body>
+</html>

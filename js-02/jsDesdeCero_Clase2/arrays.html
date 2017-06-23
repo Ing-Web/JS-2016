@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>JavaScript Desde Cero - Clase 1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="prism.css">
+</head>
+<body>
+<h1>Arrays</h1>
+<main>
+  <p>Un array es una coleccion de valores (se pueden combinar tipos de datos en el mismo array).</p>
+  <p>Un array se define con sus valores separados por comas y todo encerrado entre corchetes</p>
+
+<pre class="language-javascript line-numbers">
+<code>
+var miArray = [1,2,3,4,5];</code>
+</pre>
+
+  <h2>.length</h2>
+  <p>Para conocer el número de elementos de un array se usa la propiedad length.</p>
+
+<pre class="language-javascript line-numbers">
+<code>
+  miArray.length; //5</code>
+</pre>
+
+  <h2>Recuperar y definir elementos de un array</h2>
+  <p>Cada elemento del array posee un indice que comienza en cero (para el primero). Para recuperar un elemento se pasa el indice entre corchetes al array.</p>
+
+<pre class="language-javascript line-numbers">
+<code>
+miArray[0]; //1
+miArray[2]; //3</code>
+</pre>
+
+  <p>Tambien se pueden añadir elementos o reasignar los existentes usando el indice</p>
+
+<pre class="language-javascript line-numbers">
+<code>
+miArray[6] = 6;</code>
+</pre>
+
+<h2>Arrays multidimensionales</h2>
+
+    <p>Se pueden poner arrays dentro de otros. Para recuperar los elementos de estos arrays anidados simplemente se pasan los indices.</p>
+
+<pre class="language-javascript line-numbers">
+<code>
+var miNuevoArray = [1,2,3, ["hola", "mama"], 4 ,5 ];
+miNuevoArray[3][1]; // "mama"</code>
+</pre>
+
+<h2>.join("separador")</h2>
+<p>El método <code>.join()</code> convierte un array a un string. Como parámetro se pasa el caracter o caracteres que separará a cada elemento en el string resultante.</p>
+
+<pre class="language-javascript line-numbers">
+<code>
+miArray.join(";"); // "1;2;3;4;5"</code>
+</pre>
+
+<h2>.split("separador")</h2>
+<p>El método <code>.split()</code> convierte un string a un array. Como parámetro se le pasa el caracter que usará el interprete para saber cuando crear un nuevo elemento en un array (por ejemplo, un espacio). Si se quiere que cada letra de una palabra se convierta en un elemento de un array, se pasa un string vacio como parámetro.</p>
+
+<pre class="language-javascript line-numbers">
+<code>
+var string = "fantastico";
+string.split(""); //["f", "a", "n", "t", "a", "s", "t", "i", "c", "o"]
+
+var string2 = "Mi nombre es José";
+string.split(" "); //["Mi", "nombre", "es", "José"]</code>
+</pre>
+
+<h2>Añadir elementos al array con .push() y .unshift()</h2>
+
+
+ <p>El método .push() añade nuevos items al final del array. Mientras que el método unshift añade nuevos items al inicio del array. En ambos casos los nuevos elementos se pasan como parámetros</p>
+  <p>Ambos métodos devuelven el nuevo .length del array.</p>
+
+<pre class="language-javascript line-numbers">
+<code>
+var array = [1,2,3];
+array.push("a","b","c"); // 6
+array; // [1, 2, 3, "a", "b","c"]</code>
+</pre>
+
+<h2>Quitar elementos del array con .pop() y .shift()</h2>
+<p>El método .pop() elimina el último elemento del array. Mientras que el método .shift() elimina el primer elemento del array.</p>
+<p>Ambos métodos no requieren parámetros y ambos devuelven el elemento eliminado.</p>
+
+<pre class="language-javascript line-numbers">
+<code>
+//usaremos el array del ejemplo anterior
+array; // [1, 2, 3, "a", "b","c"]
+array.pop(); // "c";
+array; // [1, 2, 3, "a", "b"]
+array.shift(); // 1
+array; // [2, 3, "a", "b"]</code>
+</pre>
+
+<h2>Concatenar arrays con .concat()</h2>
+  <p>Este método concatena un array con otro. El segundo array se pasa como argumento.</p>
+<pre class="language-javascript line-numbers">
+<code>
+var array1 = [1,2,3];
+var array2 = ["a","b","c"]
+var array3 = array1.concat(array2);
+array3; //[1, 2, 3, "a", "b", "c"]</code>
+</pre>
+
+<h2>Extraer elementos de un array con .slice()</h2>
+  <p>EL método .slice() extrae elementos indicados por dos parámetros numéricos. Ambos son índices del array. Con este método se pueden crear nuevos arrays basados en otros.</p>
+  <ul>
+    <li>El primer parámetro indica el primer caracter que se extraerá</li>
+    <li>El segundo parámetro indica el índice en el que se detendrá el método. Por tanto, el elemento al que corresponde este índice no se extraerá.</li>
+    <li>El método .slice() no modifica el array original.</li>
+  </ul>
+<pre class="language-javascript line-numbers"><code>
+var array = [1,2,3,4,5];
+var array2 = array.slice(2,4);
+array2; //[3,4]
+// empezó a extraer desde array[2] (primer parámetro)
+// y terminó de extraer en array[4] (segundo parámetro)
+// pero no toma en cuenta a este ultimo</code>
+</pre>
+
+<h2>Eliminar y añadir elementos a un array con .splice()</h2>
+<p>El método .splice() recibe dos parámetros obligatorios (numeros enteros que corresponden a indices del array). </p>
+<ul>
+<li>El primero es el indice en el que comenzará a eliminar elementos</li>
+<li>El segundo es la cantidad de elementos que se eliminarán</li>
+</ul>
+<p>Esté método retorna los elementos eliminados y modifica el array original</p>
+<pre class="language-javascript line-numbers"><code>
+var array = [1,2,3,4,5];
+var array 2 = array.splice(2,2);
+array2; // [3,4]
+array; // [1,2,5]</code>
+</pre>
+<p>También se puede usar .splice() para añadir elementos al array. Basta con añadir más parámetros (a partir del tercero). El primero de estos elementos nuevos se insertará en el indice indicado en el primer parámetro.</p>
+
+<pre class="language-javascript line-numbers"><code>
+var array = [1,2,3,4,5];
+var array2 = array.splice(2,2,"a","b");
+array2 = [3,4]
+array; // [1, 2, "a", "b", 5]</code>
+</pre>
+
+</main>
+<footer>
+  <a href="http://escueladigital.pe">Escuela Digital</a>
+</footer>
+<script src="prism.js"></script>
+</body>
+</html>

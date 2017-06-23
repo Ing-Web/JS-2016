@@ -1,0 +1,23 @@
+#container {
+  width: 200px;
+  height: 200px;
+  background: yellow;
+  text-align: center;
+  margin-top:  1em;
+}
+
+#container-button {
+  margin-top: 50px;
+}
+
+.punto {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: tomato;
+  position: absolute;
+}
+
+form div {
+  margin-bottom:  1em;
+}

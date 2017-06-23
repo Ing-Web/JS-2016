@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>JavaScript Desde Cero - Clase 1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>JavaScript Desde Cero - Clase 1</h1>
+    <section>
+      <h2>Insertar JavaScript dentro de HTML</h2>
+      <p>Se usa la etiqueta <code>&lt;script&gt;&lt;/script&gt;</code> y se puede escribir código javascript dentro de ella, o dejarla vacia y llamar a un archivo .js externo usando el atributo src.</p>
+    </section>
+
+    <section>
+      <h2>Sintaxis de JavaScript</h2>
+      <ul>
+        <li>Case sensitive (es sensible a las mayúsculas y minúsculas)</li>
+        <li>Es de tipado dinámico.</li>
+        <li>Los comentarios en JS se pueden escribir de dos maneras:
+          <ul>
+            <li><code>/* */</code> (multilinea)</li>
+            <li><code>//</code> (para cada linea, recomendada)</li>
+          </ul>
+        </li>
+        <li>Todas las sentencias deben terminar con punto y coma.</li>
+        <li>Por regla general, después de llaves no debe ir punto y coma, salvo dos excepciones:
+          <ul>
+            <li>Cuando se crea un objeto literal</li>
+            <li>Cuando se crea una funcion con expresiones</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Instalar SublimeLinter jshint (ST3)</h2>
+      <ul>
+        <li>Instalar SublimeLinter desde el package control.</li>
+        <li>Instalar SublimeLinter-jshint</li>
+        <li>Instalar NodeJS (<a href="http://nodejs.org" target="_blank">http://nodejs.org</a>)</li>
+        <li>Instalar jshint desde npm con el siguiente comando (en terminal)<br>
+          <code>npm install -g jshint</code>
+          <br> Si la terminal no reconoce el comando npm se debe añadir npm a las variables de entorno en Windows. O podrias usar la terminal que viene con Node (node command prompt)
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Variables</h2>
+      <p>Son contenedores de información.</p>
+      <p>Se crean con la palabra reservada "var" seguida del nombre de la variable (el que queramos) y con el signo igual se le asigna un valor.</p>
+      <p>Se podria también crear una variable y no asignarle ningun valor. En este caso la variable devuelve "undefined"</p>
+      <p>Las variables tienen un scope (ambito) que es el "ambito" en el cual existen. Fuera de ese ambito, no existen.</p>
+      <p>Toda variable que se declara dentro de una funcion tiene a esa funcion como su scope</p>
+      <p>Toda variable declarada desde fuera de cualquier funcion se llama variable global (no es una buena practica usarlas). Ademas crear una variable sin "var" la vuelve automáticamente global.</p>
+    </section>
+    <section>
+      <h2>Tipos de datos</h2>
+      <ul>
+        <li>Primitivos (un solo valor)
+          <ul>
+            <li>Primarios
+              <ul>
+                <li>Number<br>
+                JavaScript no hace diferencia entre enteros, decimales, negativos, etc.
+                </li>
+                <li>String <br>
+                Son cero o más caracteres encerrados entre comillas. Pueden ser comillas simples o dobles, lo importante es que se correspondan. El caracter de escape es el backslash (\)
+                </li>
+                <li>Boolean<br>
+                Solo tienen dos valores posibles: true (verdadero) y false (falso). Existen valores que se comportan como false (falsy values) y otros que se comportan como true (truthy values).<br>
+                Falsy values:
+                <ul>
+                  <li>NaN</li>
+                  <li>0</li>
+                  <li>""</li>
+                  <li>Null</li>
+                  <li>Undefined</li>
+                </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Especiales
+              <ul>
+                <li>Undefined</li>
+                <li>Null</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Compuestos (más de un valor)
+          <ul>
+            <li>Arrays</li>
+            <li>Objetos</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Operadores</h2>
+      <p>Signos que se utilizan para realizar operaciones</p>
+      <ul>
+        <li>Operadores de asignacion
+          <ul>
+            <li><code>=</code></li>
+            <li><code>+=</code></li>
+            <li><code>-=</code></li>
+          </ul>
+        </li>
+        <li>Comparacion
+          <ul>
+            <li><code>==</code> (igualdad de valor)</li>
+            <li><code>===</code> (igualdad de valor y tipo, recomendada)</li>
+            <li><code>!=</code> (no igualdad de valor)</li>
+            <li><code>!==</code> (no igualdad de valor y tipo)</li>
+            <li><code><</code> Menor que</li>
+            <li><code>></code></li>
+            <li><code><=</code></li>
+            <li><code>>=</code></li>
+          </ul>
+        </li>
+        <li>Operadores aritméticos
+          <ul>
+            <li><code>+</code> (en el caso de numeros, hace una suma, para strings los concantena.</li>
+            <li><code>-</code></li>
+            <li><code>*</code></li>
+            <li><code>/</code></li>
+            <li><code>%</code> Modulo: devuelve el resto de una division</li>
+            <li><code>++</code> Aumenta en uno (incremento). Si es antes es un preincremento (incrementa antes de retornar el valor). Y si es despues es un postincremento (incrementa después de retornar el valor)</li>
+            <li><code>--</code> Disminuye en 1 (decremento)</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <script src="scripts.js"></script>
+  </body>
+</html>
